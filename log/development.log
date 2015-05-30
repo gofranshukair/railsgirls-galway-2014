@@ -720,3 +720,997 @@ Processing by PlacesController#show as HTML
   Rendered comments/_form.html.erb (2.0ms)
   Rendered places/show.html.erb within layouts/application (15.0ms)
 Completed 200 OK in 229ms (Views: 220.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 15:10:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:10:09 +0100
+Processing by PlacesController#index as HTML
+Completed 401 Unauthorized in 64ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-05-30 15:10:09 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (9.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/sessions/new.html.erb within layouts/application (225.0ms)
+Completed 200 OK in 948ms (Views: 894.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:10:10 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:10:10 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 15:10:10 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:10:10 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:10 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:10 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:10 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:11 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:11 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:11 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:11 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:10:11 +0100
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-05-30 15:10:17 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b1l/T50SW3LOKKAr8uyuystp/F8QER3dtlZX5Gmh6KM=", "user"=>{"email"=>"gofranshukair@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'gofranshukair@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-05-30 14:10:18.055302"], ["sign_in_count", 2], ["updated_at", "2015-05-30 14:10:18.067303"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places
+Completed 302 Found in 276ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:10:18 +0100
+Processing by PlacesController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 336ms (Views: 266.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:10:18 +0100
+
+
+Started GET "/places/1" for 127.0.0.1 at 2015-05-30 15:10:21 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (1.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRatingCache Load (1.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1  [["cacheable_id", 1], ["cacheable_type", "Place"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 1 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRatingCache Load (0.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1  [["cacheable_id", 1], ["cacheable_type", "Place"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 1 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRate Load (1.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 1 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 1 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mComment Load (2.0ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?  [["place_id", 1]]
+  Rendered comments/_form.html.erb (24.0ms)
+  Rendered places/show.html.erb within layouts/application (221.0ms)
+Completed 200 OK in 660ms (Views: 533.0ms | ActiveRecord: 10.0ms)
+
+
+Started DELETE "/places/1" for 127.0.0.1 at 2015-05-30 15:10:37 +0100
+Processing by PlacesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y+H0yEdftDzwrwtZRyNuOVyKMroUxWjMQf/scC9+eGU=", "id"=>"1"}
+  [1m[36mUser Load (7.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRate Load (0.0ms)[0m  SELECT "rates".* FROM "rates"  WHERE "rates"."rateable_id" = ? AND "rates"."rateable_type" = ? AND "rates"."dimension" IS NULL  [["rateable_id", 1], ["rateable_type", "Place"]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" IS NULL LIMIT 1[0m  [["cacheable_id", 1], ["cacheable_type", "Place"]]
+  [1m[35mRate Load (1.0ms)[0m  SELECT "rates".* FROM "rates"  WHERE "rates"."rateable_id" = ? AND "rates"."rateable_type" = ? AND "rates"."dimension" = 'autism_friendly'  [["rateable_id", 1], ["rateable_type", "Place"]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1[0m  [["cacheable_id", 1], ["cacheable_type", "Place"]]
+  [1m[35mRate Load (0.0ms)[0m  SELECT "rates".* FROM "rates"  WHERE "rates"."rateable_id" = ? AND "rates"."rateable_type" = ? AND "rates"."dimension" = 'overall'  [["rateable_id", 1], ["rateable_type", "Place"]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1[0m  [["cacheable_id", 1], ["cacheable_type", "Place"]]
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "places" WHERE "places"."id" = ?  [["id", 1]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places
+Completed 302 Found in 109ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:10:37 +0100
+Processing by PlacesController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 263ms (Views: 252.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:10:37 +0100
+
+
+Started GET "/places/new" for 127.0.0.1 at 2015-05-30 15:10:39 +0100
+Processing by PlacesController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered places/_form.html.erb (6.0ms)
+  Rendered places/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 230ms (Views: 226.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/places" for 127.0.0.1 at 2015-05-30 15:10:51 +0100
+Processing by PlacesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y+H0yEdftDzwrwtZRyNuOVyKMroUxWjMQf/scC9+eGU=", "place"=>{"name"=>"Dublin", "address"=>"Dublin", "latitude"=>"6.2597", "longitude"=>"53.3478", "description"=>"", "picture"=>"", "user_id"=>"1"}, "commit"=>"Create Place"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "places" ("address", "created_at", "description", "latitude", "longitude", "name", "picture", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Dublin"], ["created_at", "2015-05-30 14:10:51.539217"], ["description", ""], ["latitude", 6.2597], ["longitude", 53.3478], ["name", "Dublin"], ["picture", ""], ["updated_at", "2015-05-30 14:10:51.539217"], ["user_id", 1]]
+  [1m[35m (6.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/2
+Completed 302 Found in 29ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/places/2" for 127.0.0.1 at 2015-05-30 15:10:51 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRatingCache Load (1.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRate Load (0.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?[0m  [["place_id", 2]]
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered places/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 273ms (Views: 257.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:10:51 +0100
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2015-05-30 15:10:52 +0100
+
+
+Started GET "/assets/star-on.png" for 127.0.0.1 at 2015-05-30 15:10:53 +0100
+
+
+Started POST "/rate" for 127.0.0.1 at 2015-05-30 15:10:54 +0100
+Processing by RaterController#create as */*
+  Parameters: {"score"=>"5", "dimension"=>"autism_friendly", "id"=>"2", "klass"=>"Place"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "rates" ("created_at", "dimension", "rateable_id", "rateable_type", "rater_id", "stars", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2015-05-30 14:10:54.500387"], ["dimension", "autism_friendly"], ["rateable_id", 2], ["rateable_type", "Place"], ["rater_id", 1], ["stars", 5.0], ["updated_at", "2015-05-30 14:10:54.500387"]]
+  [1m[36m (6.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRatingCache Load (0.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "rating_caches" ("avg", "cacheable_id", "cacheable_type", "created_at", "dimension", "qty", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["avg", 5.0], ["cacheable_id", 2], ["cacheable_type", "Place"], ["created_at", "2015-05-30 14:10:54.558390"], ["dimension", "autism_friendly"], ["qty", 1], ["updated_at", "2015-05-30 14:10:54.558390"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 94ms (Views: 0.0ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/rate" for 127.0.0.1 at 2015-05-30 15:10:55 +0100
+Processing by RaterController#create as */*
+  Parameters: {"score"=>"4", "dimension"=>"overall", "id"=>"2", "klass"=>"Place"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "rates" ("created_at", "dimension", "rateable_id", "rateable_type", "rater_id", "stars", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", "2015-05-30 14:10:55.629451"], ["dimension", "overall"], ["rateable_id", 2], ["rateable_type", "Place"], ["rater_id", 1], ["stars", 4.0], ["updated_at", "2015-05-30 14:10:55.629451"]]
+  [1m[36m (33.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mRatingCache Load (1.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "rating_caches" ("avg", "cacheable_id", "cacheable_type", "created_at", "dimension", "qty", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["avg", 4.0], ["cacheable_id", 2], ["cacheable_type", "Place"], ["created_at", "2015-05-30 14:10:55.691455"], ["dimension", "overall"], ["qty", 1], ["updated_at", "2015-05-30 14:10:55.691455"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 109ms (Views: 1.0ms | ActiveRecord: 49.0ms)
+
+
+Started GET "/places/2/edit" for 127.0.0.1 at 2015-05-30 15:11:03 +0100
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered places/_form.html.erb (11.0ms)
+  Rendered places/edit.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 316ms (Views: 287.0ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/places/2" for 127.0.0.1 at 2015-05-30 15:11:06 +0100
+Processing by PlacesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y+H0yEdftDzwrwtZRyNuOVyKMroUxWjMQf/scC9+eGU=", "place"=>{"name"=>"Dublin", "address"=>"Dublin", "latitude"=>"6.2597", "longitude"=>"53.3478", "description"=>"", "picture"=>"", "user_id"=>"1"}, "commit"=>"Update Place", "id"=>"2"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "comments" ("created_at", "place_id", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2015-05-30 14:11:06.059048"], ["place_id", 2], ["updated_at", "2015-05-30 14:11:06.059048"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/2
+Completed 302 Found in 27ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/places/2" for 127.0.0.1 at 2015-05-30 15:11:06 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRatingCache Load (1.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRate Load (4.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?[0m  [["place_id", 2]]
+  Rendered comments/_form.html.erb (3.0ms)
+  Rendered places/show.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 305ms (Views: 288.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:11:06 +0100
+
+
+Started POST "/rate" for 127.0.0.1 at 2015-05-30 15:11:13 +0100
+Processing by RaterController#create as */*
+  Parameters: {"score"=>"3", "dimension"=>"autism_friendly", "id"=>"2", "klass"=>"Place"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+Completed 500 Internal Server Error in 22ms
+
+RuntimeError (User has already rated.):
+  app/controllers/rater_controller.rb:6:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (159.0ms)
+
+
+Started POST "/rate" for 127.0.0.1 at 2015-05-30 15:11:15 +0100
+Processing by RaterController#create as */*
+  Parameters: {"score"=>"2", "dimension"=>"autism_friendly", "id"=>"2", "klass"=>"Place"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+Completed 500 Internal Server Error in 39ms
+
+RuntimeError (User has already rated.):
+  app/controllers/rater_controller.rb:6:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (99.0ms)
+
+
+Started GET "/places/2" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mRatingCache Load (0.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRatingCache Load (0.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRate Load (0.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?  [["place_id", 2]]
+  Rendered comments/_form.html.erb (4.0ms)
+  Rendered places/show.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 296ms (Views: 289.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:18 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:19 +0100
+
+
+Started GET "/assets/star-on.png" for 127.0.0.1 at 2015-05-30 15:12:19 +0100
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2015-05-30 15:12:19 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 15:12:21 +0100
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:12:21 +0100
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (1.0ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 481ms (Views: 473.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:22 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 15:12:29 +0100
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:12:29 +0100
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 290ms (Views: 266.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:29 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:29 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:29 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:29 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:29 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:30 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:30 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:30 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:30 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:30 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:30 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:30 +0100
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-05-30 15:12:32 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y+H0yEdftDzwrwtZRyNuOVyKMroUxWjMQf/scC9+eGU="}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 55ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+Processing by PlacesController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 160ms (Views: 158.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:12:33 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 15:13:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:13:46 +0100
+Processing by PlacesController#index as HTML
+Completed 401 Unauthorized in 75ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-05-30 15:13:46 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/sessions/new.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 773ms (Views: 758.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:13:47 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:47 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-30 15:13:47 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:13:48 +0100
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-05-30 15:13:53 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fubcMuCccVWbPQJ2oYjqkfD2juXj7PZPOZFXh/NOSYc=", "user"=>{"email"=>"gofranshukair@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'gofranshukair@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-05-30 14:13:53.533627"], ["last_sign_in_at", "2015-05-30 14:10:18.055302"], ["sign_in_count", 3], ["updated_at", "2015-05-30 14:13:53.564629"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places
+Completed 302 Found in 405ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:13:53 +0100
+Processing by PlacesController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 427ms (Views: 325.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+Processing by PlacesController#index as HTML
+  [1m[35mUser Load (5.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 436ms (Views: 418.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:19:26 +0100
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:22:25 +0100
+Processing by PlacesController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 279ms (Views: 233.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:22:26 +0100
+
+
+Started GET "/places/2" for 127.0.0.1 at 2015-05-30 15:22:32 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (1.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mRatingCache Load (0.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRatingCache Load (1.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRate Load (1.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?  [["place_id", 2]]
+  Rendered comments/_form.html.erb (24.0ms)
+  Rendered places/show.html.erb within layouts/application (216.0ms)
+Completed 200 OK in 638ms (Views: 456.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/places/2/edit" for 127.0.0.1 at 2015-05-30 15:22:37 +0100
+Processing by PlacesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered places/_form.html.erb (7.0ms)
+  Rendered places/edit.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 223ms (Views: 215.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:23:57 +0100
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (1.0ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 394ms (Views: 360.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:23:58 +0100
+
+
+Started GET "/places/2" for 127.0.0.1 at 2015-05-30 15:24:00 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 2 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRate Load (0.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 2 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mComment Load (0.0ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?[0m  [["place_id", 2]]
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered places/show.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 183ms (Views: 179.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:24:08 +0100
+Processing by PlacesController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 128ms (Views: 125.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/places/2" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+Processing by PlacesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y2TZj94zFHit7LmIa4VqlKQKlaFp4DRbA9//bqGX/bk=", "id"=>"2"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mRate Load (0.0ms)[0m  [1mSELECT "rates".* FROM "rates"  WHERE "rates"."rateable_id" = ? AND "rates"."rateable_type" = ? AND "rates"."dimension" IS NULL[0m  [["rateable_id", 2], ["rateable_type", "Place"]]
+  [1m[35mRatingCache Load (1.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" IS NULL LIMIT 1  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[36mRate Load (0.0ms)[0m  [1mSELECT "rates".* FROM "rates"  WHERE "rates"."rateable_id" = ? AND "rates"."rateable_type" = ? AND "rates"."dimension" = 'autism_friendly'[0m  [["rateable_id", 2], ["rateable_type", "Place"]]
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "rates" WHERE "rates"."id" = ?  [["id", 1]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "rating_caches" WHERE "rating_caches"."id" = ?  [["id", 1]]
+  [1m[36mRate Load (0.0ms)[0m  [1mSELECT "rates".* FROM "rates"  WHERE "rates"."rateable_id" = ? AND "rates"."rateable_type" = ? AND "rates"."dimension" = 'overall'[0m  [["rateable_id", 2], ["rateable_type", "Place"]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "rates" WHERE "rates"."id" = ?  [["id", 2]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1[0m  [["cacheable_id", 2], ["cacheable_type", "Place"]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "rating_caches" WHERE "rating_caches"."id" = ?  [["id", 2]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "places" WHERE "places"."id" = ?[0m  [["id", 2]]
+  [1m[35m (5.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/places
+Completed 302 Found in 109ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (1.0ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 159ms (Views: 155.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:12 +0100
+
+
+Started GET "/places/new" for 127.0.0.1 at 2015-05-30 15:24:14 +0100
+Processing by PlacesController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered places/_form.html.erb (4.0ms)
+  Rendered places/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 142ms (Views: 138.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/places" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+Processing by PlacesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y2TZj94zFHit7LmIa4VqlKQKlaFp4DRbA9//bqGX/bk=", "place"=>{"name"=>"Dublin", "address"=>"Dublin", "latitude"=>"6.2597", "longitude"=>"53.3478", "description"=>"", "picture"=>"", "user_id"=>"1"}, "commit"=>"Create Place"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "places" ("address", "created_at", "description", "latitude", "longitude", "name", "picture", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "Dublin"], ["created_at", "2015-05-30 14:24:27.286875"], ["description", ""], ["latitude", 6.2597], ["longitude", 53.3478], ["name", "Dublin"], ["picture", ""], ["updated_at", "2015-05-30 14:24:27.286875"], ["user_id", 1]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/places/3
+Completed 302 Found in 57ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/places/3" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRatingCache Load (1.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1  [["cacheable_id", 3], ["cacheable_type", "Place"]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 3 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRatingCache Load (0.0ms)[0m  SELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1  [["cacheable_id", 3], ["cacheable_type", "Place"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 3 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35mRate Load (0.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 3 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 3 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?  [["place_id", 3]]
+  Rendered comments/_form.html.erb (4.0ms)
+  Rendered places/show.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 223ms (Views: 215.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/star-off.png" for 127.0.0.1 at 2015-05-30 15:24:27 +0100
+
+
+Started GET "/assets/star-on.png" for 127.0.0.1 at 2015-05-30 15:24:29 +0100
+
+
+Started POST "/rate" for 127.0.0.1 at 2015-05-30 15:24:30 +0100
+Processing by RaterController#create as */*
+  Parameters: {"score"=>"4", "dimension"=>"autism_friendly", "id"=>"3", "klass"=>"Place"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (1.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 3 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (10.0ms)[0m  [1mINSERT INTO "rates" ("created_at", "dimension", "rateable_id", "rateable_type", "rater_id", "stars", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-05-30 14:24:30.800076"], ["dimension", "autism_friendly"], ["rateable_id", 3], ["rateable_type", "Place"], ["rater_id", 1], ["stars", 4.0], ["updated_at", "2015-05-30 14:24:30.800076"]]
+  [1m[35m (24.0ms)[0m  commit transaction
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1[0m  [["cacheable_id", 3], ["cacheable_type", "Place"]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "rating_caches" ("avg", "cacheable_id", "cacheable_type", "created_at", "dimension", "qty", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["avg", 4.0], ["cacheable_id", 3], ["cacheable_type", "Place"], ["created_at", "2015-05-30 14:24:30.953085"], ["dimension", "autism_friendly"], ["qty", 1], ["updated_at", "2015-05-30 14:24:30.953085"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+Completed 200 OK in 266ms (Views: 0.0ms | ActiveRecord: 44.0ms)
+
+
+Started POST "/rate" for 127.0.0.1 at 2015-05-30 15:24:31 +0100
+Processing by RaterController#create as */*
+  Parameters: {"score"=>"3", "dimension"=>"overall", "id"=>"3", "klass"=>"Place"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (1.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 3 AND "rates"."rateable_type" = 'Place'[0m  [["rater_id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "rates" ("created_at", "dimension", "rateable_id", "rateable_type", "rater_id", "stars", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-05-30 14:24:31.625124"], ["dimension", "overall"], ["rateable_id", 3], ["rateable_type", "Place"], ["rater_id", 1], ["stars", 3.0], ["updated_at", "2015-05-30 14:24:31.625124"]]
+  [1m[35m (52.0ms)[0m  commit transaction
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1[0m  [["cacheable_id", 3], ["cacheable_type", "Place"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "rating_caches" ("avg", "cacheable_id", "cacheable_type", "created_at", "dimension", "qty", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["avg", 3.0], ["cacheable_id", 3], ["cacheable_type", "Place"], ["created_at", "2015-05-30 14:24:31.730130"], ["dimension", "overall"], ["qty", 1], ["updated_at", "2015-05-30 14:24:31.730130"]]
+  [1m[35m (5.0ms)[0m  commit transaction
+Completed 200 OK in 142ms (Views: 1.0ms | ActiveRecord: 62.0ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2015-05-30 15:24:39 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y2TZj94zFHit7LmIa4VqlKQKlaFp4DRbA9//bqGX/bk=", "comment"=>{"body"=>"hellop", "user_id"=>"1", "place_id"=>"3"}, "commit"=>"Create Comment"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "place_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "hellop"], ["created_at", "2015-05-30 14:24:39.692585"], ["place_id", 3], ["updated_at", "2015-05-30 14:24:39.692585"], ["user_id", 1]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/comments/2
+Completed 302 Found in 30ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/comments/2" for 127.0.0.1 at 2015-05-30 15:24:39 +0100
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mComment Load (0.0ms)[0m  SELECT  "comments".* FROM "comments"  WHERE "comments"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered comments/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 228ms (Views: 208.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/letsrate.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/jquery.raty.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-30 15:24:40 +0100
+
+
+Started GET "/comments" for 127.0.0.1 at 2015-05-30 15:24:44 +0100
+Processing by CommentsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mComment Load (1.0ms)[0m  SELECT "comments".* FROM "comments"
+  Rendered comments/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 273ms (Views: 264.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 15:24:49 +0100
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-30 15:24:49 +0100
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 248ms (Views: 246.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/places/3" for 127.0.0.1 at 2015-05-30 15:24:51 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (1.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRatingCache Load (0.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'autism_friendly' LIMIT 1[0m  [["cacheable_id", 3], ["cacheable_type", "Place"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'autism_friendly' AND "rates"."rateable_id" = 3 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRatingCache Load (1.0ms)[0m  [1mSELECT  "rating_caches".* FROM "rating_caches"  WHERE "rating_caches"."cacheable_id" = ? AND "rating_caches"."cacheable_type" = ? AND "rating_caches"."dimension" = 'overall' LIMIT 1[0m  [["cacheable_id", 3], ["cacheable_type", "Place"]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "rates"  WHERE "rates"."rater_id" = ? AND "rates"."dimension" = 'overall' AND "rates"."rateable_id" = 3 AND "rates"."rateable_type" = 'Place'  [["rater_id", 1]]
+  [1m[36mRate Load (0.0ms)[0m  [1mSELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 3 AND "rates"."dimension" = 'autism_friendly' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "rates".* FROM "rates"  WHERE "rates"."rater_id" = 1 AND "rates"."rateable_id" = 3 AND "rates"."dimension" = 'autism_friendly' LIMIT 1
+  [1m[36mComment Load (1.0ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."place_id" = ?[0m  [["place_id", 3]]
+  Rendered comments/_form.html.erb (10.0ms)
+  Rendered places/show.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 209ms (Views: 200.0ms | ActiveRecord: 4.0ms)

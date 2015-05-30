@@ -120,3 +120,240 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 00:30:2
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-29 00:30:21 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePlaces (20150528233250)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (17.0ms)[0m  [1mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "address" varchar(255), "latitude" decimal, "longitude" decimal, "description" text, "picture" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150528233250"]]
+  [1m[36m (30.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-29 09:19:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.1.8/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 126ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-05-29 09:19:24 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/registrations/new.html.erb within layouts/application (179.0ms)
+Completed 200 OK in 2552ms (Views: 2537.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-29 09:19:26 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-29 09:19:26 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 09:19:26 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-29 09:19:27 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-29 09:19:27 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-29 09:19:27 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-29 09:19:39 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q09d+6efV+4tVoKo2rQJyD6qU3HAor7zQV3DRv5xIfU=", "user"=>{"email"=>"gofranshukair@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'gofranshukair@gmail.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/devise-3.5.1/app/views/devise/registrations/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 389ms (Views: 148.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 09:19:40 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-29 09:19:40 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-29 09:19:40 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2015-05-29 09:20:00 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q09d+6efV+4tVoKo2rQJyD6qU3HAor7zQV3DRv5xIfU=", "user"=>{"email"=>"gofranshukair@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'gofranshukair@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", "2015-05-29 08:20:00.254051"], ["email", "gofranshukair@gmail.com"], ["encrypted_password", "$2a$10$qjC5cDy3qly.7SIySaNape5JPASTi6BpOhIpLY.KdCw0oKOVHt4vi"], ["updated_at", "2015-05-29 08:20:00.254051"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[35mSQL (2.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-05-29 08:20:00.322055"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-05-29 08:20:00.322055"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-05-29 08:20:00.325055"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 239ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-29 09:20:00 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.1.8/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 09:20:11 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-29 09:20:12 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-29 09:20:12 +0100
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-29 09:20:32 +0100
+Processing by PlacesController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mPlace Load (0.0ms)[0m  [1mSELECT "places".* FROM "places"[0m
+  Rendered places/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 318ms (Views: 259.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-29 09:20:33 +0100
+
+
+Started GET "/places/new" for 127.0.0.1 at 2015-05-29 09:20:38 +0100
+Processing by PlacesController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered places/_form.html.erb (41.0ms)
+  Rendered places/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 205ms (Views: 198.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/places" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+Processing by PlacesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q09d+6efV+4tVoKo2rQJyD6qU3HAor7zQV3DRv5xIfU=", "place"=>{"name"=>"Dublin", "address"=>"Dublin", "latitude"=>"6.2597", "longitude"=>"53.3478", "description"=>"Dublin", "picture"=>"", "user_id"=>"1"}, "commit"=>"Create Place"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "places" ("address", "created_at", "description", "latitude", "longitude", "name", "picture", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "Dublin"], ["created_at", "2015-05-29 08:24:06.233120"], ["description", "Dublin"], ["latitude", 6.2597], ["longitude", 53.3478], ["name", "Dublin"], ["picture", ""], ["updated_at", "2015-05-29 08:24:06.233120"], ["user_id", 1]]
+  [1m[35m (8.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/places/1
+Completed 302 Found in 59ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/places/1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+Processing by PlacesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (1.0ms)[0m  SELECT  "places".* FROM "places"  WHERE "places"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered places/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 190ms (Views: 173.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/places.css?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/assets/places.js?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-05-29 09:24:06 +0100
+
+
+Started GET "/places" for 127.0.0.1 at 2015-05-29 09:24:09 +0100
+Processing by PlacesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mPlace Load (0.0ms)[0m  SELECT "places".* FROM "places"
+  Rendered places/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 146ms (Views: 142.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-05-30 14:26:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 272ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-05-30 14:26:52 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/railties-4.1.8/lib/rails/templates/rails/welcome/index.html.erb (22.0ms)
+Completed 200 OK in 136ms (Views: 135.0ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateComments (20150530133749)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "user_id" integer, "place_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150530133749"]]
+  [1m[36m (4.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
